@@ -1,17 +1,12 @@
 #include "SPI.h"
 #include <string.h>
-#include "SD.h"
 #include <nRF24L01.h>
 #include <RF24.h>
 #include<SoftwareSerial.h>
-uint8_t SD_MISO = 12;
-uint8_t SD_MOSI = 11;
-uint8_t SD_SCLK = 13;
-uint8_t SD_CS = 4;
 
 uint32_t currentTime = millis();
 
-SoftwareSerial SUART(6, 10); // RX 7 TX 8 - software serial, not hardware tx/rx
+SoftwareSerial SUART(6, 10); // RX, TX
 RF24 radio(7,8); // CE, CSN
 const byte   addresses [][6] = {"00001", "00002"};
 
